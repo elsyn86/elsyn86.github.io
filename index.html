@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mindful Haven – Healing • Learning • Community</title>
+  <meta name="description" content="Mindful Haven by Elsy Nabea – healing tools, books, youth mentorship, and community projects." />
+  <!-- TailwindCSS via CDN (fine for GitHub Pages; swap to local build later if needed) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji','Segoe UI Emoji'; }
+    .fade { animation: fade 0.8s ease-in both; }
+    @keyframes fade { from { opacity: 0; transform: translateY(8px);} to { opacity: 1; transform: translateY(0);} }
+  </style>
+</head>
+<body class="bg-white text-slate-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-2xl bg-indigo-600"></div>
+        <span class="font-extrabold tracking-tight text-xl">Mindful Haven</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#about" class="hover:text-indigo-700">About</a>
+        <a href="#projects" class="hover:text-indigo-700">Projects</a>
+        <a href="#store" class="hover:text-indigo-700">Books</a>
+        <a href="#contact" class="hover:text-indigo-700">Contact</a>
+      </nav>
+      <a href="#contact" class="ml-4 inline-flex items-center px-4 py-2 rounded-xl bg-indigo-600 text-white text-sm font-semibold shadow-sm hover:bg-indigo-700">Sponsor a Soul</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-indigo-50 to-white">
+    <div class="max-w-6xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+      <div class="fade">
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+          Healing one soul at a time.
+        </h1>
+        <p class="mt-4 text-lg text-slate-600">Tools, books, and mentorship that help you rebuild your life with wisdom, courage, and community.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#projects" class="px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700">Explore Projects</a>
+          <a href="#store" class="px-5 py-3 rounded-xl border border-slate-200 hover:border-slate-300 font-semibold">Get the Book</a>
+        </div>
+      </div>
+      <div class="fade">
+        <div class="relative rounded-3xl overflow-hidden shadow-lg ring-1 ring-slate-200">
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1600&auto=format&fit=crop" alt="Calm workspace" class="w-full h-full object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-extrabold">About Mindful Haven</h2>
+        <p class="mt-4 text-slate-600">Founded by <strong>Elsy Nabea</strong>, Mindful Haven blends spiritual clarity with practical tools. We create healing programs, books, and community projects to help people recover dignity, purpose, and momentum.</p>
+        <ul class="mt-6 space-y-3 text-slate-700">
+          <li>• The Healing Room — short, soulful episodes</li>
+          <li>• <em>Beyond the Layoff</em> — the book & toolkit</li>
+          <li>• Bloom Tracker — simple period app for girls</li>
+          <li>• Youth mentorship — Majengo initiative</li>
+        </ul>
+      </div>
+      <div class="bg-indigo-50 rounded-3xl p-6 ring-1 ring-indigo-100">
+        <h3 class="font-bold text-indigo-800">Mission</h3>
+        <p class="text-slate-700 mt-2">Restore hearts, renew minds, and rebuild lives with wisdom-driven tools and community support.</p>
+        <h3 class="font-bold text-indigo-800 mt-6">Vision</h3>
+        <p class="text-slate-700 mt-2">A generation unchained—emotionally whole, spiritually anchored, and economically empowered.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-16 md:py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Featured Projects</h2>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <article class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop" alt="Book writing" class="h-40 w-full object-cover">
+          <div class="p-5">
+            <h3 class="font-bold">Beyond the Layoff</h3>
+            <p class="text-sm text-slate-600 mt-2">A practical + spiritual guide to rebuild life after job loss.</p>
+            <a href="#store" class="inline-block mt-4 text-indigo-700 font-semibold">Learn more →</a>
+          </div>
+        </article>
+        <!-- Card 2 -->
+        <article class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1600&auto=format&fit=crop" alt="Podcast mic" class="h-40 w-full object-cover">
+          <div class="p-5">
+            <h3 class="font-bold">The Healing Room</h3>
+            <p class="text-sm text-slate-600 mt-2">60-second mindful episodes with calm voiceovers.</p>
+            <a href="#contact" class="inline-block mt-4 text-indigo-700 font-semibold">Collaborate →</a>
+          </div>
+        </article>
+        <!-- Card 3 -->
+        <article class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+          <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1600&auto=format&fit=crop" alt="Flowers" class="h-40 w-full object-cover">
+          <div class="p-5">
+            <h3 class="font-bold">Bloom Tracker</h3>
+            <p class="text-sm text-slate-600 mt-2">A parent‑friendly period tracker for girls (prototype).</p>
+            <a href="#contact" class="inline-block mt-4 text-indigo-700 font-semibold">Get updates →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Store / Book CTA -->
+  <section id="store" class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Get the Book: <em>Beyond the Layoff</em></h2>
+      <p class="mt-4 text-slate-600">A holistic recovery roadmap with prompts, a spiritual bonus, and practical strategies.</p>
+      <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#" class="px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700">Buy eBook</a>
+        <a href="#" class="px-5 py-3 rounded-xl border border-slate-200 hover:border-slate-300 font-semibold">Buy Paperback</a>
+      </div>
+      <p class="text-xs text-slate-500 mt-3">Replace buttons with your live purchase links (KDP, Shopify, or WhatsApp).</p>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="py-14 bg-indigo-600">
+    <div class="max-w-4xl mx-auto px-4 text-center text-white">
+      <h3 class="text-xl md:text-2xl font-extrabold">Join the Mindful Haven Circle</h3>
+      <p class="mt-2 text-indigo-100">Monthly notes on healing, courage, and opportunities to sponsor a youth.</p>
+      <form class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+        <input type="email" placeholder="Your email" class="px-4 py-3 rounded-xl text-slate-900 w-full sm:w-80" required>
+        <button type="submit" class="px-5 py-3 rounded-xl bg-white text-indigo-700 font-semibold">Subscribe</button>
+      </form>
+      <p class="text-xs mt-3 text-indigo-100">Connect this to Mailchimp, ConvertKit, or Google Forms later.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+      <div class="md:col-span-2">
+        <h2 class="text-2xl md:text-3xl font-extrabold">Contact</h2>
+        <p class="mt-3 text-slate-600">Partnerships, speaking, donations, or mentorship collaboration—let’s talk.</p>
+        <form class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input class="border border-slate-300 rounded-xl px-4 py-3" placeholder="Full name" required/>
+          <input type="email" class="border border-slate-300 rounded-xl px-4 py-3" placeholder="Email" required/>
+          <input class="border border-slate-300 rounded-xl px-4 py-3 sm:col-span-2" placeholder="Subject"/>
+          <textarea rows="4" class="border border-slate-300 rounded-xl px-4 py-3 sm:col-span-2" placeholder="Your message"></textarea>
+          <button class="px-5 py-3 rounded-xl bg-indigo-600 text-white font-semibold hover:bg-indigo-700 sm:col-span-2">Send</button>
+        </form>
+        <p class="text-xs text-slate-500 mt-2">Hook this form to Netlify Forms, Formspree, or a Google Form action.</p>
+      </div>
+      <aside class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+        <h3 class="font-bold">Quick Links</h3>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a class="hover:text-indigo-700" href="#projects">Projects</a></li>
+          <li><a class="hover:text-indigo-700" href="#store">Buy the Book</a></li>
+          <li><a class="hover:text-indigo-700" href="#">TikTok: @MindfulHaven</a></li>
+          <li><a class="hover:text-indigo-700" href="#">Email: hello@mindfulhaven.example</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-100">
+    <div class="max-w-6xl mx-auto px-4 text-sm text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Mindful Haven • Elsy Nabea</p>
+      <div class="flex items-center gap-4">
+        <a href="#" class="hover:text-indigo-700">Privacy</a>
+        <a href="#" class="hover:text-indigo-700">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
