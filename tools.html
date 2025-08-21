@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beyond the Layoff – Tools | Mindful Haven</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    .card { border:1px solid #e5e7eb; border-radius:1rem; background:#fff; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .btn { padding: .75rem 1rem; border-radius:.75rem; font-weight:600; }
+    .btn-primary { background:#1e3a8a; color:#fff; }
+    .btn-outline { border:1px solid #cbd5e1; }
+    .grid-cards { display:grid; grid-template-columns: repeat(1,minmax(0,1fr)); gap:1rem;}
+    @media (min-width: 768px) { .grid-cards { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <header class="bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="font-extrabold">Mindful Haven</a>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="index.html#about" class="hover:text-blue-700">About</a>
+        <a href="index.html#projects" class="hover:text-blue-700">Projects</a>
+        <a href="index.html#store" class="hover:text-blue-700">Books</a>
+        <a href="tools.html" class="font-semibold text-blue-700">Tools</a>
+        <a href="index.html#contact" class="hover:text-blue-700">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-extrabold">Beyond the Layoff – Practical Tools</h1>
+    <p class="mt-2 text-slate-600">Use these simple, private, in-browser tools to plan your next steps. Nothing is uploaded; your data stays in your browser.</p>
+
+    <!-- Cards -->
+    <section class="mt-8 grid-cards">
+      
+      <!-- Financial Runway Calculator -->
+      <article class="card p-5">
+        <h2 class="font-bold text-lg">Financial Runway Calculator</h2>
+        <p class="text-sm text-slate-600">Estimate how many months you can cover expenses.</p>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <input id="savings" type="number" class="border rounded-xl px-3 py-2" placeholder="Current savings (KES)" />
+          <input id="severance" type="number" class="border rounded-xl px-3 py-2" placeholder="Severance (KES)" />
+          <input id="income" type="number" class="border rounded-xl px-3 py-2" placeholder="Expected monthly income (KES)" />
+          <input id="expenses" type="number" class="border rounded-xl px-3 py-2" placeholder="Monthly expenses (KES)" />
+        </div>
+        <div class="mt-4 flex gap-2">
+          <button class="btn btn-primary" onclick="runway()">Calculate</button>
+          <button class="btn btn-outline" onclick="clearRunway()">Reset</button>
+        </div>
+        <p class="mt-3 font-semibold" id="runwayOut"></p>
+      </article>
+
+      <!-- Weekly Job Hunt Planner -->
+      <article class="card p-5">
+        <h2 class="font-bold text-lg">Weekly Job Hunt Planner</h2>
+        <p class="text-sm text-slate-600">Set simple targets and download a plan you can print.</p>
+        <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+          <input id="apps" type="number" class="border rounded-xl px-3 py-2" placeholder="Applications per week" />
+          <input id="network" type="number" class="border rounded-xl px-3 py-2" placeholder="Networking messages" />
+          <input id="learning" type="text" class="border rounded-xl px-3 py-2" placeholder="Course / Skill focus" />
+          <input id="selfcare" type="text" class="border rounded-xl px-3 py-2" placeholder="Self-care commitment" />
+        </div>
+        <button class="btn btn-primary mt-3" onclick="downloadPlan()">Download Plan (.txt)</button>
+      </article>
+
+      <!-- Habit Tracker (Local Only) -->
+      <article class="card p-5">
+        <h2 class="font-bold text-lg">7‑Day Habit Tracker</h2>
+        <p class="text-sm text-slate-600">Track daily habits privately in your browser.</p>
+        <div class="mt-3">
+          <input id="habitName" class="border rounded-xl px-3 py-2 w-full" placeholder="Habit name (e.g., 30‑min learning)" />
+          <div class="mt-3 grid grid-cols-7 gap-2 text-center text-xs">
+            <label><input type="checkbox" id="d1"> Mon</label>
+            <label><input type="checkbox" id="d2"> Tue</label>
+            <label><input type="checkbox" id="d3"> Wed</label>
+            <label><input type="checkbox" id="d4"> Thu</label>
+            <label><input type="checkbox" id="d5"> Fri</label>
+            <label><input type="checkbox" id="d6"> Sat</label>
+            <label><input type="checkbox" id="d7"> Sun</label>
+          </div>
+          <div class="mt-3 flex gap-2">
+            <button class="btn btn-primary" onclick="saveHabit()">Save</button>
+            <button class="btn btn-outline" onclick="clearHabit()">Clear</button>
+          </div>
+          <p class="text-sm text-slate-600 mt-2">Your progress is stored locally (no account needed).</p>
+        </div>
+      </article>
+    </section>
+
+    <p class="mt-10 text-sm text-slate-500">Made with care by Mindful Haven • These tools are for guidance only and not financial advice.</p>
+  </main>
+
+  <script>
+    // Financial Runway Calculator
+    function runway() {
+      const savings = parseFloat(document.getElementById('savings').value) || 0;
+      const severance = parseFloat(document.getElementById('severance').value) || 0;
+      const income = parseFloat(document.getElementById('income').value) || 0;
+      const expenses = parseFloat(document.getElementById('expenses').value) || 0;
+      if (expenses <= 0) { document.getElementById('runwayOut').textContent = 'Please enter monthly expenses.'; return; }
+      const months = (savings + severance) / Math.max(expenses - income, 0.0001);
+      const safe = Math.max(0, Math.floor(months * 10) / 10);
+      document.getElementById('runwayOut').textContent = `Approx. runway: ${safe.toFixed(1)} month(s).`;
+    }
+    function clearRunway(){['savings','severance','income','expenses'].forEach(id=>document.getElementById(id).value=''); document.getElementById('runwayOut').textContent='';}
+
+    // Weekly Plan download
+    function downloadPlan() {
+      const plan = {
+        applications: document.getElementById('apps').value || 0,
+        networking: document.getElementById('network').value || 0,
+        learning: document.getElementById('learning').value || '',
+        selfcare: document.getElementById('selfcare').value || ''
+      };
+      const text = `WEEKLY JOB HUNT PLAN\n\nApplications: ${plan.applications}\nNetworking messages: ${plan.networking}\nLearning focus: ${plan.learning}\nSelf-care: ${plan.selfcare}\n\nSignature: ____________________`;
+      const blob = new Blob([text], {{type: 'text/plain'}});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'weekly-plan.txt'; a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // Habit tracker with localStorage
+    function saveHabit() {
+      const name = document.getElementById('habitName').value || 'Habit';
+      const days = [1,2,3,4,5,6,7].map(i => document.getElementById('d'+i).checked);
+      localStorage.setItem('mhHabit', JSON.stringify({name, days}));
+      alert('Saved!');
+    }
+    function clearHabit() { localStorage.removeItem('mhHabit'); ['habitName','d1','d2','d3','d4','d5','d6','d7'].forEach(id=>{const el=document.getElementById(id); if(el.type==='checkbox') el.checked=false; else el.value='';}); }
+    (function loadHabit(){
+      const saved = localStorage.getItem('mhHabit');
+      if(!saved) return;
+      try{
+        const obj = JSON.parse(saved);
+        document.getElementById('habitName').value = obj.name || '';
+        (obj.days||[]).forEach((v,i)=>{ const cb = document.getElementById('d'+(i+1)); if(cb) cb.checked = !!v; });
+      }catch(e){}
+    })();
+  </script>
+</body>
+</html>
